@@ -12,4 +12,7 @@ public class Client extends People{
 
     Client() {}
 
+    public void addWorkoutClient(String nameTrainer, int numberAddWorkoutInt) {
+        workout.put(nameTrainer, numberAddWorkoutInt);
+    }
 }

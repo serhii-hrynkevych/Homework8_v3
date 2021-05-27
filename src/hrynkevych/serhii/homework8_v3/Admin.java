@@ -57,10 +57,10 @@ public class Admin extends People{
             if (w.name.equals(nameTrainer) && w.role.equals("тренер")) {
                 for (Client c : clients) {
                     if (c.name.equals(nameClient)) {
-                        ((Trainer)w).addWorkout(nameTrainer,nameClient, numberAddWorkout);
-                    } else {
-                        System.out.println("Такой клиент не найден");
-                    }
+                        c.addWorkoutClient(nameTrainer, numberAddWorkout);
+                    } //else {
+                        //System.out.println("Такой клиент не найден");
+                    //}
                 }
             } else {
                 System.out.println("Такой тренер не найден");
