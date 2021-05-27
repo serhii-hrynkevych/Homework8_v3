@@ -7,12 +7,7 @@ public class Masseur extends Worker{
         workExperience = Integer.parseInt(newWorkExperience);
     }
 
-    public void addMassage(String nameTrainer, String nameClient, int numberAddWorkoutInt) {
-        Admin admin = new Admin();
-        for (Client c : admin.clients) {
-            if (c.name.equals(nameClient)) {
-                c.massage = ++numberAddWorkoutInt;
-            }
-        }
+    public void addMassage(Client client, int numberAddWorkoutInt) {
+                client.massage = +numberAddWorkoutInt;
     }
 }

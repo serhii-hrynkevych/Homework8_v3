@@ -1,6 +1,5 @@
 package hrynkevych.serhii.homework8_v3;
 
-import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -51,16 +50,14 @@ public class Admin extends People{
     }
 
     public void addWorkout(String nameTrainer, String nameClient, int numberAddWorkout) {
-        //Trainer trainer = new Trainer();
-
         for (Worker w : workers) {
             if (w.name.equals(nameTrainer) && w.role.equals("тренер")) {
                 for (Client c : clients) {
                     if (c.name.equals(nameClient)) {
-                        c.addWorkoutClient(nameTrainer, numberAddWorkout);
-                    } //else {
-                        //System.out.println("Такой клиент не найден");
-                    //}
+                        ((Trainer)w).addWorkoutClient(c,nameTrainer, numberAddWorkout);
+                    } else {
+                        System.out.println("Такой клиент не найден");
+                    }
                 }
             } else {
                 System.out.println("Такой тренер не найден");
@@ -69,13 +66,11 @@ public class Admin extends People{
     }
 
     public void addMassage(String nameMasseur, String nameClient, int numberAddMassage) {
-        //Trainer trainer = new Trainer();
-
         for (Worker w : workers) {
             if (w.name.equals(nameMasseur) && w.role.equals("массажист")) {
                 for (Client c : clients) {
                     if (c.name.equals(nameClient)) {
-                        ((Masseur)w).addMassage(nameMasseur,nameClient, numberAddMassage);
+                        ((Masseur)w).addMassage(c, numberAddMassage);
                     } else {
                         System.out.println("Такой клиент не найден");
                     }
@@ -90,9 +85,4 @@ public class Admin extends People{
         Client client = new Client();
         System.out.println(client.workout.toString());
     }
-
-
-
-
-
 }

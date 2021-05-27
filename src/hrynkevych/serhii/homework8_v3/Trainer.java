@@ -7,8 +7,7 @@ public class Trainer extends Worker{
         workExperience = Integer.parseInt(newWorkExperience);
     }
 
-    Trainer() {}
-
-
-
+    public void addWorkoutClient(Client client, String nameTrainer, int numberAddWorkoutInt) {
+        client.workout.put(nameTrainer, numberAddWorkoutInt);
+    }
 }
