@@ -47,7 +47,7 @@ public class Admin extends People{
 
     public void outClient() {
         for (Client i : clients)
-            System.out.println("Клиент: " + i.name + "; массажей: " + i.massage);
+            System.out.println("Клиент: " + i.name + "; массажей: " + i.massage + "; тренировки: " + i.workout);
     }
 
     public void addWorkout(String nameTrainer, String nameClient, int numberAddWorkout) {
